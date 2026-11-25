@@ -43,8 +43,9 @@ void onPointsChanged(int face, const Vec2* pts, int n)
 
 void onRangeChanged(int face, int has, const double range_u[2])
 {
-    plot_data.user_range_x[0] = has ? range_u[0] : 0.0;
-    plot_data.user_range_x[1] = has ? range_u[1] : 0.0;
+    // Zakres ustawiony klawiszem X sluzy tylko do podgladu na ploterze.
+    // Niczego nie wpisujemy do plot_data. W computeVolume zakres jest
+    // dostepny jako faces[...].has_range_u i faces[...].range_u.
 }
 
 void on_key_f_pressed(void)
@@ -57,5 +58,13 @@ void on_key_g_pressed(void)
 
 double computeVolume(const FacePoints* faces, int n_faces, double width, double depth)
 {
+    // Licz wylacznie z parametrow tej funkcji: faces, n_faces, width, depth.
+    // Kazde wywolanie moze dotyczyc innej (przeksztalconej) bryly, wiec nie
+    // korzystaj z plot_data ani z wartosci zapamietanych wczesniej.
+    const FacePoints& front = faces[FACE_FRONT]; // punkty sciany FRONT tego wywolania
+    const double integration_from = 0.0;         // granice calkowania: cala szerokosc bryly
+    const double integration_to = width;
+    const double solid_depth = depth;
+
     return 0.0;
 }

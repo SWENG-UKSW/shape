@@ -123,13 +123,13 @@ seed=<numer> ploter=<ściana lub -> u=<u> v=<v> pkt=F<n> B<n> L<n> R<n> D<n> <wy
 
 ## Statusy
 
-`blad` to błąd względny objętości dla Twoich punktów. Próg to 0,5%.
+`blad` to błąd względny objętości dla Twoich punktów. Próg dla Twoich punktów to 0,5%, dla przekształconych brył 2%. Po `T` w konsoli pojawia się dodatkowo największy błąd wśród przekształconych brył.
 
 | Status | Znaczenie |
 |:--|:--|
 | `TRYB TESTOWY` | `ALBUM_NUMBER` wynosi 0, wynik nie jest oceniany. |
 | `ZLY WYNIK` | Błąd dla Twoich punktów przekracza 0,5% (także NaN lub nieskończoność). |
-| `NIESPOJNY` | Wynik dla Twoich punktów jest dobry, ale dla co najmniej jednej przekształconej bryły błąd przekracza 0,5%. Zwykle znaczy to, że `computeVolume` korzysta z czegoś poza swoimi parametrami. |
+| `NIESPOJNY` | Błąd dla Twoich punktów mieści się w 0,5%, ale dla co najmniej jednej przekształconej bryły przekracza 2%. Zwykle znaczy to, że `computeVolume` korzysta z czegoś poza swoimi parametrami. Granice całkowania bierz z `width` (albo z `faces[...].range_u`), nigdy z `plot_data.user_range_x`. Przy `NIESPOJNY` wypisz w `computeVolume` wartości, z których liczysz, i sprawdź, czy zmieniają się między wywołaniami. |
 | `SUKCES` | Błąd jest w normie dla Twoich punktów i dla wszystkich przekształconych brył. |
 
 ## Oddanie
