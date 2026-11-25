@@ -1,0 +1,5 @@
+/build/
+/bin/student*.dll
+/bin/libstudent.so
+/bin/.libstudent_loaded_*
+/bin/plot.png
