@@ -109,7 +109,7 @@ Górna ściana jest zakrzywiona i nie da się na niej zaczepić plotera.
 | `R` | Wczytuje `bin/student.dll` od nowa, kasuje punkty i zakresy wszystkich ścian, wynik i ploter. Zmiana numeru albumu wczytuje też nową bryłę. |
 | `ESC` | Zamyka program. |
 
-Punkty klikasz fizyczną myszą lub touchpadem. Kliknięcia wygenerowane programowo są odrzucane, a ich liczbę pokazuje `ODRZUCONE` w tytule okna. Kliknięcie ploteru oglądanego zbyt ukośnie (więcej niż 80° od prostopadłej) jest ignorowane, a jedna ściana mieści najwyżej 500 punktów.
+Punkty klikasz fizyczną myszą lub touchpadem. Kliknięcia wygenerowane programowo są odrzucane, a ich liczbę pokazuje `ODRZUCONE` w tytule okna. Kliknięcie ploteru oglądanego zbyt ukośnie (więcej niż 80° od prostopadłej) jest ignorowane. Każda ściana mieści najwyżej 12 punktów: kliknięcie ponad limit nie dodaje punktu, w tytule pojawia się `LIMIT PUNKTOW`, a przy zaczepionej ścianie `pkt` pokazuje licznik z limitem, np. `pkt=F12/12 B0 L0 R0 D0`.
 
 ## Pasek tytułu
 
